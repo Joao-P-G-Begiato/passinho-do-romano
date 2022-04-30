@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./index.css" rel="stylesheet">
+</head>
+
+<body>
+    <header> 
+        <h2>Atividade Passinho do Romano:</h2>
+            <em>um codificador / decodificador de mensagens pelos métodos: Cifra de César / Base 64</em>
+    </header>
+    <main>
+    <form id="passinho">
+        <textarea id="msg" type="text" name="mensagem" placeholder="Insira sua mensagem aqui" style ="resize: none;" cols="28" rows="5" ></textarea> <br>
+        <select name="codemode" id="codemode" >
+            <option value="none">
+                ---
+            </option>
+            <option value="cesar">
+                Cifra de César
+            </option>
+            <option value="base64">
+                Base 64
+            </option>
+        </select> <br>
+        
+        <label id="inc" for="inc">
+            Selecione o incremento
+        </label>
+        <input type=number min="0" max="25" id="incr" name="inc"></input>
+        <div class="codecod">
+        <input type="radio" onclick="codificar()"id="cod" name="cod-decod" value="cod">Codificar Mensagem </input><br>
+        <input type="radio" onclick="decodificar()" id="decod" name="cod-decod" value="decod">Decodificar Mensagem </input>
+        </div>
+        <input id="submit" type="submit" value="---">
+        <textarea disabled id="result"  name="mensagem" placeholder="Tradução" style ="resize: none;" cols="28" rows="5" ></textarea> <br>
+    </form>
+</main>
+    <script src="./index.js"></script>
+</body>
+</html>
