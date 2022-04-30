@@ -1,0 +1,84 @@
+input{
+    color: lime;
+    background-color: black;
+    opacity: 0.9;
+    border: 1px solid lime;
+    border-radius: 20px;
+    margin: 0.25rem;
+}
+
+select{
+    color: lime;
+    background-color: black;
+    opacity: 0.9;
+    border: 1px solid lime;
+    border-radius: 20px;
+    margin: 0.25rem;
+}
+
+form{
+    color: lime;
+    background-color: black;
+    opacity: 0.9;
+    border: 1px solid lime;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    width: 20rem;
+    margin: 0.25rem;
+}
+
+textarea{
+    color: lime;
+    background-color: rgb(39, 39, 39);
+    opacity: 0.9;
+    border: 1px solid lime;
+    border-radius: 20px;
+    padding: 1rem;
+    width: 15rem;
+    margin: 0.25rem;
+}
+
+textarea:focus-visible{
+    border: 1px solid green;
+}
+
+#inc{
+    display: none;
+    margin: 0.25rem;
+}
+#incr{
+    display: none;
+    margin: 0.25rem;
+}
+
+body{
+    color:lime;
+    background-color: black;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header{
+    border: 0.2rem lime solid;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0rem 0rem 4rem 1rem;
+}
+
+h2{
+    margin: 0.8rem;
+}
+
+div{
+    margin: 0.05rem;
+}
