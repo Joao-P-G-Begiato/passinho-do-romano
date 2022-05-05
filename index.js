@@ -8,9 +8,6 @@ var label = document.getElementById('inc')
 var seletor = document.getElementById('incr')
 var codmsg64= ''
 var radios = document.getElementsByName("cod-decod")
-var arrayucod = []
-var msgcodificada = ''
-
 
 form.addEventListener('submit', function(e) {
     msgsecreta = campo.value;
@@ -60,8 +57,8 @@ function submited(){
 
 function codSelected(){
     if(select.options[select.selectedIndex].text == "Cifra de César"){
-        retornaCodCesar();
-        retorno.innerText = `${msgcodificada}`;
+        retorno.innerText = `${retornaCodCesar()}`;
+
     }else {
         cript64(msgsecreta)
         retorno.innerText = `${codmsg64}`
@@ -87,26 +84,28 @@ function decript64(texto){
     return codmsg64
 }
 
-function abctonumber(texto){
+function abcToNumber(texto){
+    var arrayUCod = []
     for(i=0; i < texto.length; i++){
-        arrayucod.push(texto.charCodeAt(i))
+        arrayUCod.push(texto.charCodeAt(i))
     }
-    return arrayucod
+    return arrayUCod
 }
 
 function codCesar (){
-    abctonumber(msgsecreta)
-    for(i=0 ; i < arrayucod.length; i++){
-    arrayucod[i]= arrayucod[i]-65+ parseInt(seletor.value) % 26 +65
+    var arrayUCod = abcToNumber(msgsecreta)
+    for(i=0 ; i < arrayUCod.length; i++){
+    arrayUCod[i]= (arrayUCod[i]-65+ parseInt(seletor.value)) % 26 +65
     }
-    return arrayucod
+    return arrayUCod
 }
 
 function retornaCodCesar (){
-    codCesar()
+    var arrayUCod = codCesar()
     var arraystring = ''
-    for(i=0; i < arrayucod.length; i++){
-        arraystring = arrayucod[i]
+    var msgcodificada = ''
+    for(i=0; i < arrayUCod.length; i++){
+        arraystring = arrayUCod[i]
         msgcodificada += String.fromCharCode(arraystring)
     }
     return msgcodificada

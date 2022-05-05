@@ -51,7 +51,10 @@ textarea:focus-visible{
     display: none;
     margin: 0.25rem;
 }
-
+#incr{
+    display: none;
+    margin: 0.25rem;
+}
 
 body{
     color:lime;
