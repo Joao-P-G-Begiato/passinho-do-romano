@@ -69,10 +69,6 @@ textarea:focus-visible{
     height: 1rem;
 }
 
-#hidden{
-    display: none;
-}
-
 body{
     color:lime;
     background-color: black;

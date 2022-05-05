@@ -15,8 +15,6 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
 });
 
-form.addEventListener('submit', submited()) 
-
 function codificar(){
     btn.value="Codificar!"
     if(select.options[select.selectedIndex].text == "Cifra de César"){
@@ -37,11 +35,16 @@ function decodificar(){
     btn.value="Decodificar!"
     if(select.options[select.selectedIndex].text == "Cifra de César"){
         label.style.display="inline";
-        seletor.style.display="inline"
+        seletor.style.display="inline";
+    }else if(select.options[select.selectedIndex].text == "Base 64"){
+        label.style.display="none";
+        seletor.style.display="none";
     }else{
         label.style.display="none";
-        seletor.style.display="none"
+        seletor.style.display="none";
+        alert("Selecione o método de codificar")
     }
+    
 }
 
 function submited(){
