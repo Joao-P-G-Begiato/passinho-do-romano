@@ -67,7 +67,7 @@ function codSelected(){
 
 function decodSelected(){
     if(select.options[select.selectedIndex].text == "Cifra de César"){
-        alert("Decodificar César");
+        retorno.innerText = `${retornaDecodCesar()}`;;
      }else{
         decript64(msgsecreta)
         retorno.innerText = `${codmsg64}`
@@ -94,14 +94,49 @@ function abcToNumber(texto){
 
 function codCesar (){
     var arrayUCod = abcToNumber(msgsecreta)
-    for(i=0 ; i < arrayUCod.length; i++){
-    arrayUCod[i]= (arrayUCod[i]-65+ parseInt(seletor.value)) % 26 +65
-    }
+    for(i=0 ; i < arrayUCod.length; i++){  
+        if(arrayUCod[i] >= 65 && arrayUCod[i] < 91){
+            arrayUCod[i]= (arrayUCod[i]-65+ parseInt(seletor.value)) % 26 +65 
+        }else if(arrayUCod[i] >=97 && arrayUCod[i] < 123){
+            arrayUCod[i]= (arrayUCod[i]-97+ parseInt(seletor.value)) % 26 +97 
+           
+        } else {
+            arrayUCod[i] = arrayUCod [i]
+        }
+}
+
     return arrayUCod
 }
 
 function retornaCodCesar (){
     var arrayUCod = codCesar()
+    var arraystring = ''
+    var msgcodificada = ''
+    for(i=0; i < arrayUCod.length; i++){
+        arraystring = arrayUCod[i]
+        msgcodificada += String.fromCharCode(arraystring)
+    }
+    return msgcodificada
+}
+
+function decodCesar (){
+    var arrayUCod = abcToNumber(msgsecreta)
+    for(i=0 ; i < arrayUCod.length; i++){  
+        if(arrayUCod[i] >= 65 && arrayUCod[i] < 91){
+            arrayUCod[i]= (arrayUCod[i]-90- parseInt(seletor.value)) % 26 +90 
+        }else if(arrayUCod[i] >=97 && arrayUCod[i] < 123){
+            arrayUCod[i]= (arrayUCod[i]-122- parseInt(seletor.value)) % 26 +122 
+           
+        } else {
+            arrayUCod[i] = arrayUCod [i]
+        }
+}
+
+    return arrayUCod
+}
+
+function retornaDecodCesar (){
+    var arrayUCod = decodCesar()
     var arraystring = ''
     var msgcodificada = ''
     for(i=0; i < arrayUCod.length; i++){
