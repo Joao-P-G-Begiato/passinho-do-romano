@@ -8,6 +8,9 @@ var label = document.getElementById('inc')
 var seletor = document.getElementById('incr')
 var codmsg64= ''
 var radios = document.getElementsByName("cod-decod")
+var arrayucod = []
+var msgcodificada = ''
+
 
 form.addEventListener('submit', function(e) {
     msgsecreta = campo.value;
@@ -54,19 +57,11 @@ function submited(){
     }
 }
 
-function cript64(texto){
-    codmsg64 = window.btoa(texto)
-    return codmsg64
-}
-
-function decript64(texto){
-    codmsg64 = window.atob(texto)
-    return codmsg64
-}
 
 function codSelected(){
     if(select.options[select.selectedIndex].text == "Cifra de César"){
-        alert("Codificar César");
+        retornaCodCesar();
+        retorno.innerText = `${msgcodificada}`;
     }else {
         cript64(msgsecreta)
         retorno.innerText = `${codmsg64}`
@@ -80,4 +75,39 @@ function decodSelected(){
         decript64(msgsecreta)
         retorno.innerText = `${codmsg64}`
 }
+}
+
+function cript64(texto){
+    codmsg64 = window.btoa(texto)
+    return codmsg64
+}
+
+function decript64(texto){
+    codmsg64 = window.atob(texto)
+    return codmsg64
+}
+
+function abctonumber(texto){
+    for(i=0; i < texto.length; i++){
+        arrayucod.push(texto.charCodeAt(i))
+    }
+    return arrayucod
+}
+
+function codCesar (){
+    abctonumber(msgsecreta)
+    for(i=0 ; i < arrayucod.length; i++){
+    arrayucod[i]= arrayucod[i]-65+ parseInt(seletor.value) % 26 +65
+    }
+    return arrayucod
+}
+
+function retornaCodCesar (){
+    codCesar()
+    var arraystring = ''
+    for(i=0; i < arrayucod.length; i++){
+        arraystring = arrayucod[i]
+        msgcodificada += String.fromCharCode(arraystring)
+    }
+    return msgcodificada
 }
