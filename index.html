@@ -33,8 +33,9 @@
             </label>
             <input type=number id="incr" name="inc"></input>
             <div class="codecod">
-                <input type="radio" onclick="codificar()"id="cod" name="cod-decod" value="cod">Codificar Mensagem </input><br>
-                <input type="radio" onclick="decodificar()" id="decod" name="cod-decod" value="decod">Decodificar Mensagem </input>
+                <input type="radio" id="hidden" name="cod-decod" checked></input>
+                <input type="radio" onclick="codificar()" id="cod" name="cod-decod" value="cod" >Codificar Mensagem </input><br>
+                <input type="radio" onclick="decodificar()" id="decod" name="cod-decod" value="decod" >Decodificar Mensagem </input>
             </div>
             <input id="submit" type="submit" value="---">
             <textarea disabled id="result"  name="mensagem" placeholder="Tradução" style ="resize: none;" cols="28" rows="5" ></textarea> <br>
